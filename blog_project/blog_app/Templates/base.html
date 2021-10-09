@@ -1,0 +1,92 @@
+<!doctype html>
+{% load static %}
+<!-- load the staic file in templates -->
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+   
+    
+   <!-- datetimpicker jquery -->
+    <link rel="stylesheet" href="{% static 'css/jquery.datetimepicker.min.css'%}">
+
+  <!-- text including style -->
+    <style>
+    body{
+      margin: 20px;
+      text-align: center;
+    }
+    p1{
+      text-align:center;
+      font-size: 15px;
+    }
+    
+  </style>
+    
+
+
+
+    <title>Blog</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #05ffb0;;">
+      <a class="navbar-brand" href="#">Blog</a>
+
+      <a href="{% url 'blog_add' %}"class="btn-btn-outline-success">
+      <i class="fas fa-pen-nib"style="color: black;"></i>Add_Content</a>
+
+
+
+    </nav>
+      {% block content %}
+      
+
+      {% endblock content %}
+  
+
+    
+
+    
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+
+
+    <!-- datetime jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jquery datetimepicker -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.datetimepicker.full.js' %}"></script>
+    <script src="{% static 'js/jquery.datetimepicker.full.min.js' %}"></script>
+    <script>
+      $(function () {
+            $("#datetimepicker").datetimepicker({
+              format:'Y-m-d H:i:i',
+              formatTime:'H:i:i',
+              formatDate:'Y-m-d',
+              step:1
+
+            });
+        });
+    
+    </script>
+
+    
+
+
+    
+  </body>
+
+</html>

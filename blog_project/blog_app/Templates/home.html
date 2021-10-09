@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container shadow p-5">
+
+	<h1><span>Detail Of Blogger Content</span></h1>
+	
+
+		{% for blog in content %}
+		<div class="container-fluid shadow p-5">
+			
+			<div class="image">
+			<img src="{{blog.bloggerimage.url}}"alt="" style="width:30%;">
+		    </div>
+			<div class="text">
+				<h1 class="title">{{blog.title}}</h1>
+				<p1 class="blog">{{blog.blog}}</p1>
+
+				<h2 class="name">CreatedBy:-{{blog.name}}</h2>
+				<p class="date">published_date:-{{blog.date}}</p>
+
+
+				<!-- edit content -->
+				<a href="{% url 'blog_edit' blog.id %}"class="btn text-secondary px-0"><i class="fas fa-user-edit"></i>
+
+
+
+					<!-- delete content  -->
+				<form action="{% url 'blog_delete' blog.id %}" method="post" class="d-inline">{% csrf_token %}<button type="submit" class="btn"><i class="fas fa-trash-alt fa-lg text-danger float-right"></i></button>
+
+			</div>
+		</div>
+		
+		{% endfor %}
+	
+
+
+	</div>
+{% endblock content %}
